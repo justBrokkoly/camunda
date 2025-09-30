@@ -1,0 +1,4 @@
+piven\example\camunda7\CleanupControllerTest.class
+piven\example\camunda7\EventProcessingProcessTest.class
+piven\example\camunda7\LoanApplicationProcessTest.class
+piven\example\camunda7\PaymentProcessTest.class

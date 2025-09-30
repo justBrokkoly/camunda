@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_19my3yl" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.19.0">
+  <decision id="paymentDecision" name="Payment Decision">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Сумма платежа">
+        <inputExpression id="inputExpression1" typeRef="double">
+          <text>amount</text>
+        </inputExpression>
+      </input>
+      <input id="input2" label="Валюта">
+        <inputExpression id="inputExpression2" typeRef="string">
+          <text>currency</text>
+        </inputExpression>
+      </input>
+      <input id="input3" label="Результат антифрод-проверки">
+        <inputExpression id="inputExpression3" typeRef="string">
+          <text>antiFraudResult</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Решение" typeRef="string" />
+      <rule id="rule1">
+        <inputEntry id="inputEntry1">
+          <text>&lt;= 10000</text>
+        </inputEntry>
+        <inputEntry id="inputEntry2">
+          <text>"RUB"</text>
+        </inputEntry>
+        <inputEntry id="inputEntry3">
+          <text>"CLEAN"</text>
+        </inputEntry>
+        <outputEntry id="outputEntry1">
+          <text>"APPROVE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule2">
+        <inputEntry id="inputEntry4">
+          <text>&gt; 10000</text>
+        </inputEntry>
+        <inputEntry id="inputEntry5">
+          <text>"RUB"</text>
+        </inputEntry>
+        <inputEntry id="inputEntry6">
+          <text>"CLEAN"</text>
+        </inputEntry>
+        <outputEntry id="outputEntry2">
+          <text>"APPROVE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule3">
+        <inputEntry id="inputEntry7">
+          <text>&gt;= 0</text>
+        </inputEntry>
+        <inputEntry id="inputEntry8">
+          <text>"RUB"</text>
+        </inputEntry>
+        <inputEntry id="inputEntry9">
+          <text>"FRAUD"</text>
+        </inputEntry>
+        <outputEntry id="outputEntry3">
+          <text>"REJECT"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rule4">
+        <inputEntry id="inputEntry10">
+          <text>&gt;= 0</text>
+        </inputEntry>
+        <inputEntry id="inputEntry11">
+          <text>not("RUB")</text>
+        </inputEntry>
+        <inputEntry id="inputEntry12">
+          <text>"CLEAN"</text>
+        </inputEntry>
+        <outputEntry id="outputEntry4">
+          <text>"APPROVE"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

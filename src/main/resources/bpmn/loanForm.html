@@ -1,0 +1,26 @@
+<form role="form" cam-form-model="camunda">
+    <h3>Заявка на кредит</h3>
+
+    <label>ФИО клиента</label>
+    <input type="text" cam-variable-name="clientName" /><br/><br/>
+
+    <label>Сумма кредита</label>
+    <input type="number" cam-variable-name="loanAmount" /><br/><br/>
+
+    <label>Срок (мес.)</label>
+    <input type="number" cam-variable-name="loanTerm" /><br/><br/>
+
+    <label>Согласие на обработку данных</label>
+    <input type="checkbox" cam-variable-name="agreement" value="true" /><br/><br/>
+
+    <label>Решение</label>
+    <select cam-variable-name="decision">
+        <option value="approve">Одобрить</option>
+        <option value="reject">Отклонить</option>
+    </select><br/><br/>
+
+    <label>Комментарий менеджера</label>
+    <input type="text" cam-variable-name="managerComment" size="50" /><br/><br/>
+
+    <button type="submit">Сохранить</button>
+</form>

@@ -1,0 +1,77 @@
+{
+  "components": [
+    {
+      "text": "# Заявка на кредит",
+      "label": "Text view",
+      "type": "text",
+      "id": "Field_title",
+      "layout": {
+        "row": "Row_0azti6q"
+      }
+    },
+    {
+      "label": "ФИО клиента",
+      "type": "textfield",
+      "id": "Field_fio",
+      "key": "clientName",
+      "layout": {
+        "row": "Row_0fiwks3"
+      }
+    },
+    {
+      "label": "Сумма кредита",
+      "type": "number",
+      "id": "Field_amount",
+      "key": "loanAmount",
+      "layout": {
+        "row": "Row_0qnw45a"
+      }
+    },
+    {
+      "label": "Срок (мес.)",
+      "type": "number",
+      "id": "Field_term",
+      "key": "loanTerm",
+      "layout": {
+        "row": "Row_043nq20"
+      }
+    },
+    {
+      "label": "Согласие на обработку данных",
+      "type": "checkbox",
+      "id": "Field_agreement",
+      "key": "agreement",
+      "layout": {
+        "row": "Row_0f21qyg"
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Одобрить",
+          "value": "approve"
+        },
+        {
+          "label": "Отклонить",
+          "value": "reject"
+        }
+      ],
+      "label": "Решение",
+      "type": "radio",
+      "id": "Field_decision",
+      "key": "decision",
+      "layout": {
+        "row": "Row_0952re5"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "loanForm",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}

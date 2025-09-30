@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1917f4f8-4427-4c52-a838-a99414713743" name="Changes" comment="Расширена практика до ебени фени чего добавлено хрен и перечислишь">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/camunda.JdnFIA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/camunda.JdnFIA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/camunda.JdnFIA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/camunda.JdnFIA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/33b1ac43-30fe-4ba8-81e7-a7d6bc5b979d/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/jvm.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/maven.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/CamundaDemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/config/CamundaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/controllers/CleanupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/BlacklistCheckDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/CreditScoringDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/ErrorHandlerDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/PrepareDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/PrepareSimpleDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/PublicationDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/PublicationSimpleDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/SaveDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/delegates/SaveSimpleDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/dto/ProcessVariables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/dto/ServiceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/dto/ServiceResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/interfaces/BpmUsage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/listeners/ProcessLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/listeners/TaskAssignmentListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/mappers/MappingCallActivityVars.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/monitoring/MonDream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/monitoring/Monitoring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/monitoring/MonitoringDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/DocumentLoadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/MessageSenderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/PrepareService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/PublicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/SaveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/tasks/TaskCreditService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/utils/BpmUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/piven/example/camunda7/workers/AntiFraudWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/eventPrepare.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/eventProcessing.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/eventPublication.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/eventSave.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/loadDocuments.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/loanApplicationProcess.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/loanForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bpmn/paymentProcess.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dmn/loanApprovalDecision.dmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dmn/paymentDecision.dmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/forms/loanForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/forms/loanForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/piven/example/camunda7/CleanupControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/piven/example/camunda7/EventProcessingProcessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/piven/example/camunda7/LoanApplicationProcessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/piven/example/camunda7/PaymentProcessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/camunda-project-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/eventPrepare.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/eventProcessing.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/eventPublication.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/eventSave.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/loadDocuments.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/loanApplicationProcess.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/loanForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/bpmn/paymentProcess.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/dmn/loanApprovalDecision.dmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/dmn/paymentDecision.dmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/forms/loanForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/forms/loanForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/CamundaDemoApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/config/CamundaConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/controllers/CleanupController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/BlacklistCheckDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/CreditScoringDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/ErrorHandlerDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/PrepareDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/PrepareSimpleDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/PublicationDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/PublicationSimpleDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/SaveDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/delegates/SaveSimpleDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/dto/ProcessVariables.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/dto/ServiceRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/dto/ServiceResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/interfaces/BpmUsage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/listeners/ProcessLogger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/listeners/TaskAssignmentListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/mappers/MappingCallActivityVars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/monitoring/MonDream$MonDreamBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/monitoring/MonDream.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/monitoring/Monitoring.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/monitoring/MonitoringDelegate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/DocumentLoadService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/MessageSenderService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/NotificationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/PaymentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/PrepareService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/PublicationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/SaveService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/tasks/TaskCreditService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/utils/BpmUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piven/example/camunda7/workers/AntiFraudWorker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/piven.example.camunda7.EventProcessingProcessTest/report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/piven.example.camunda7.EventProcessingProcessTest/report.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/piven.example.camunda7.LoanApplicationProcessTest/report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/piven.example.camunda7.LoanApplicationProcessTest/report.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/piven.example.camunda7.PaymentProcessTest/report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/piven.example.camunda7.PaymentProcessTest/report.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/css/main.b2b50cfd.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/css/main.b2b50cfd.chunk.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/2.81b35827.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/2.81b35827.chunk.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/2.81b35827.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/main.a8c975ab.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/main.a8c975ab.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/runtime-main.2b4cdd20.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/process-test-coverage/static/js/runtime-main.2b4cdd20.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/piven/example/camunda7/CleanupControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/piven/example/camunda7/EventProcessingProcessTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/piven/example/camunda7/LoanApplicationProcessTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/piven/example/camunda7/PaymentProcessTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="new-camunda-diagram" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="All in camunda7-lecture-practicum" />
+    </enabled-run-configurations>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="17" />
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="32ELRfAIkH1MbZD4ykdgr89jCXB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/astonuser/IdeaProjects/OrderService",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29770115",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "eed92d6b3f4070d9044b71a708736363",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\astonuser\IdeaProjects\camunda7-lecture-practicum\src\main\resources\bpmn" />
+      <recent name="C:\Users\astonuser\IdeaProjects\camunda7-lecture-practicum\src\main\resources\META-INF\resources\forms" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\astonuser\IdeaProjects\camunda7-lecture-practicum\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CamundaDemoApplication">
+    <configuration name="All in camunda7-lecture-practicum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="camunda7-lecture-practicum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventProcessingProcessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="camunda-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="piven.example.camunda7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="piven.example.camunda7" />
+      <option name="MAIN_CLASS_NAME" value="piven.example.camunda7.EventProcessingProcessTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventProcessingProcessTest.testPositiveScenario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="camunda-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="piven.example.camunda7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="piven.example.camunda7" />
+      <option name="MAIN_CLASS_NAME" value="piven.example.camunda7.EventProcessingProcessTest" />
+      <option name="METHOD_NAME" value="testPositiveScenario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentProcessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="camunda7-lecture-practicum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="piven.example.camunda7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="piven.example.camunda7" />
+      <option name="MAIN_CLASS_NAME" value="piven.example.camunda7.PaymentProcessTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in camunda-project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="camunda-project" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CamundaDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="camunda7-lecture-practicum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="piven.example.camunda7.CamundaDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in camunda7-lecture-practicum" />
+        <item itemvalue="JUnit.PaymentProcessTest" />
+        <item itemvalue="JUnit.java in camunda-project" />
+        <item itemvalue="JUnit.EventProcessingProcessTest" />
+        <item itemvalue="JUnit.EventProcessingProcessTest.testPositiveScenario" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1917f4f8-4427-4c52-a838-a99414713743" name="Changes" comment="" />
+      <created>1756980779333</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756980779333</updated>
+      <workItem from="1759161470888" duration="15735000" />
+      <workItem from="1759217617136" duration="324000" />
+    </task>
+    <task id="LOCAL-00001" summary="Практика Camunda 7">
+      <option name="closed" value="true" />
+      <created>1758174773166</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758174773166</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Гитигнор">
+      <option name="closed" value="true" />
+      <created>1758175245166</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758175245166</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Гитигнор">
+      <option name="closed" value="true" />
+      <created>1758175311699</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758175311699</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Расширена практика до ебени фени чего добавлено хрен и перечислишь">
+      <option name="closed" value="true" />
+      <created>1758897927811</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758897927811</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.dmn" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Практика Camunda 7" />
+    <MESSAGE value="Гитигнор" />
+    <MESSAGE value="Расширена практика до ебени фени чего добавлено хрен и перечислишь" />
+    <option name="LAST_COMMIT_MESSAGE" value="Расширена практика до ебени фени чего добавлено хрен и перечислишь" />
+  </component>
+</project>
