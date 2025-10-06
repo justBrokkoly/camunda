@@ -1,8 +1,9 @@
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+.flattened-pom.xml
 
 ### STS ###
 .apt_generated
@@ -31,6 +32,7 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
+build/
 
 ### VS Code ###
 .vscode/

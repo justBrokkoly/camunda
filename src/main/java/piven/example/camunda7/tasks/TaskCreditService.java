@@ -2,7 +2,6 @@ package piven.example.camunda7.tasks;
 
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -26,7 +25,9 @@ public class TaskCreditService {
             score = 60; // Средний score
         } else if (income != null && income > 10000) {
             score = 40; // Низкий score
-        } else {
+        }  else if (income!=null && income == 777) {
+            score = 777;
+        }else {
             score = 20; // Очень низкий
         }
         execution.setVariable("scoring", score);

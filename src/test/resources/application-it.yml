@@ -8,6 +8,7 @@ spring:
     password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: update
     show-sql: true
@@ -21,7 +22,7 @@ camunda:
     database:
       type: postgres
     job-execution:
-      enabled: true
+      enabled: false
     history-level: full
     webapp:
       application-path: /camunda

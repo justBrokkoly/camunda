@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1p3ryg8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.25.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
+  <bpmn:collaboration id="Collaboration_10kqd4o">
+    <bpmn:participant id="Participant_0zxpsr5" name="Проверка скоринга" processRef="scoringProcess" />
+  </bpmn:collaboration>
+  <bpmn:process id="scoringProcess" name="scoringProcess" isExecutable="true" camunda:historyTimeToLive="P1D">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_185gm2g</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1478utv" sourceRef="Task_CreditScoring" targetRef="Event_1gk4txl" />
+    <bpmn:sequenceFlow id="Flow_185gm2g" sourceRef="StartEvent_1" targetRef="Task_GetBorrowerInfo" />
+    <bpmn:sequenceFlow id="Flow_1qdui3g" sourceRef="Task_GetBorrowerInfo" targetRef="Gateway_09eqswy" />
+    <bpmn:serviceTask id="Task_CreditScoring" name="Кредитный скорринг" camunda:asyncBefore="true" camunda:expression="${taskCredit.getScoring(execution)}">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:outputParameter name="scoring">${taskCredit.getScoring(execution)}</camunda:outputParameter>
+        </camunda:inputOutput>
+        <camunda:executionListener delegateExpression="${processLogger}" event="end" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_17ex58i</bpmn:incoming>
+      <bpmn:outgoing>Flow_1478utv</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1gk4txl">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_1478utv</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_06x1d2y" sourceRef="Gateway_09eqswy" targetRef="Event_09l8t4n" />
+    <bpmn:sequenceFlow id="Flow_1dinclx" sourceRef="Event_09l8t4n" targetRef="Event_06pd62b" />
+    <bpmn:endEvent id="Event_06pd62b">
+      <bpmn:incoming>Flow_1dinclx</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Task_GetBorrowerInfo" name="Получить данные заемщика" camunda:asyncBefore="true" camunda:delegateExpression="${borrowerInfoReceiverExecutor}">
+      <bpmn:incoming>Flow_185gm2g</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qdui3g</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:eventBasedGateway id="Gateway_09eqswy">
+      <bpmn:incoming>Flow_1qdui3g</bpmn:incoming>
+      <bpmn:outgoing>Flow_06x1d2y</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1s6305y</bpmn:outgoing>
+    </bpmn:eventBasedGateway>
+    <bpmn:intermediateCatchEvent id="Event_09l8t4n">
+      <bpmn:incoming>Flow_06x1d2y</bpmn:incoming>
+      <bpmn:outgoing>Flow_1dinclx</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_05ikely">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT5S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="Event_1uq0n95">
+      <bpmn:incoming>Flow_1s6305y</bpmn:incoming>
+      <bpmn:outgoing>Flow_17ex58i</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_00ot4r5" messageRef="Message_0nnopdh" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1s6305y" sourceRef="Gateway_09eqswy" targetRef="Event_1uq0n95" />
+    <bpmn:sequenceFlow id="Flow_17ex58i" sourceRef="Event_1uq0n95" targetRef="Task_CreditScoring" />
+  </bpmn:process>
+  <bpmn:message id="Message_178s6rp" name="Документы получены" />
+  <bpmn:message id="Message_0nnopdh" name="BORROWER_INFO_RECEIVED" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_10kqd4o">
+      <bpmndi:BPMNShape id="Participant_0zxpsr5_di" bpmnElement="Participant_0zxpsr5" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="900" height="470" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="262" y="292" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CreditScoring_di" bpmnElement="Task_CreditScoring">
+        <dc:Bounds x="800" y="270" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1gk4txl_di" bpmnElement="Event_1gk4txl">
+        <dc:Bounds x="962" y="292" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_06pd62b_di" bpmnElement="Event_06pd62b">
+        <dc:Bounds x="742" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0adsgts_di" bpmnElement="Task_GetBorrowerInfo">
+        <dc:Bounds x="420" y="270" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_09eqswy_di" bpmnElement="Gateway_09eqswy">
+        <dc:Bounds x="605" y="285" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_09l8t4n_di" bpmnElement="Event_09l8t4n">
+        <dc:Bounds x="612" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1uq0n95_di" bpmnElement="Event_1uq0n95">
+        <dc:Bounds x="712" y="292" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1478utv_di" bpmnElement="Flow_1478utv">
+        <di:waypoint x="900" y="310" />
+        <di:waypoint x="962" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_185gm2g_di" bpmnElement="Flow_185gm2g">
+        <di:waypoint x="298" y="310" />
+        <di:waypoint x="420" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qdui3g_di" bpmnElement="Flow_1qdui3g">
+        <di:waypoint x="520" y="310" />
+        <di:waypoint x="605" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06x1d2y_di" bpmnElement="Flow_06x1d2y">
+        <di:waypoint x="630" y="285" />
+        <di:waypoint x="630" y="238" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1dinclx_di" bpmnElement="Flow_1dinclx">
+        <di:waypoint x="630" y="202" />
+        <di:waypoint x="630" y="130" />
+        <di:waypoint x="742" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1s6305y_di" bpmnElement="Flow_1s6305y">
+        <di:waypoint x="655" y="310" />
+        <di:waypoint x="712" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17ex58i_di" bpmnElement="Flow_17ex58i">
+        <di:waypoint x="748" y="310" />
+        <di:waypoint x="800" y="310" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
