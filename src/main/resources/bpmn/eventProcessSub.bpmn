@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0nr7vm7" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.25.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
+  <bpmn:collaboration id="Collaboration_1ii6jgs">
+    <bpmn:participant id="asd" name="Обработка события" processRef="eventProcessSub" />
+  </bpmn:collaboration>
+  <bpmn:process id="eventProcessSub" name="eventProcessSub" isExecutable="true" camunda:historyTimeToLive="P1D">
+    <bpmn:startEvent id="Event_0x8e376">
+      <bpmn:outgoing>Flow_0rb1edv</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:callActivity id="Activity_1axcpc0" name="Подготовка ответа" camunda:asyncAfter="true" calledElement="eventPrepare">
+      <bpmn:extensionElements>
+        <camunda:in businessKey="#{execution.processBusinessKey}" />
+        <camunda:inputOutput>
+          <camunda:inputParameter name="requestId">${requestIdAliasStartPrepare}</camunda:inputParameter>
+          <camunda:inputParameter name="response">${responseAliasStartPrepare}</camunda:inputParameter>
+          <camunda:inputParameter name="status">${status}</camunda:inputParameter>
+          <camunda:inputParameter name="type">${startPrepareType}</camunda:inputParameter>
+          <camunda:inputParameter name="enabled">${enabled}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0rb1edv</bpmn:incoming>
+      <bpmn:outgoing>Flow_1hv9xev</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:endEvent id="Event_1vs54ao">
+      <bpmn:incoming>Flow_193gsin</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0rb1edv" sourceRef="Event_0x8e376" targetRef="Activity_1axcpc0" />
+    <bpmn:sequenceFlow id="Flow_1hv9xev" sourceRef="Activity_1axcpc0" targetRef="Activity_1ambe5f" />
+    <bpmn:callActivity id="Activity_17t7skb" name="Сохранение" camunda:asyncAfter="true" calledElement="eventSave">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="requestId">${requestIdAliasSave}</camunda:inputParameter>
+          <camunda:inputParameter name="response">${responseAliasSave}</camunda:inputParameter>
+          <camunda:inputParameter name="scenario">POSITIVE_SCENARIO</camunda:inputParameter>
+          <camunda:inputParameter name="type">${saveType}</camunda:inputParameter>
+          <camunda:inputParameter name="mapResponse">
+            <camunda:map>
+              <camunda:entry key="endPrepareType">${execution.getVariableTyped(responseAliasEndPrepare, true)}</camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+        <camunda:in businessKey="#{execution.processBusinessKey}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0yvlhy8</bpmn:incoming>
+      <bpmn:outgoing>Flow_193gsin</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="Flow_193gsin" sourceRef="Activity_17t7skb" targetRef="Event_1vs54ao" />
+    <bpmn:callActivity id="Activity_0lvavdj" name="Публикация" camunda:asyncAfter="true" calledElement="eventPublication">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="requestId">${requestIdAliasEndPublication}</camunda:inputParameter>
+          <camunda:inputParameter name="response">${responseAliasEndPublication}</camunda:inputParameter>
+          <camunda:inputParameter name="status">${status}</camunda:inputParameter>
+          <camunda:inputParameter name="type">${endPublicationType}</camunda:inputParameter>
+          <camunda:inputParameter name="mapResponse">
+            <camunda:map>
+              <camunda:entry key="endPrepareType">${execution.getVariableTyped(responseAliasEndPrepare, true)}</camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+        <camunda:in businessKey="#{execution.processBusinessKey}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_167wno1</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yvlhy8</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="Flow_0yvlhy8" sourceRef="Activity_0lvavdj" targetRef="Activity_17t7skb" />
+    <bpmn:callActivity id="Activity_1t0ypxx" name="Подготовка ответа" camunda:asyncAfter="true" calledElement="eventPrepare">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="requestId">${requestIdAliasEndPrepare}</camunda:inputParameter>
+          <camunda:inputParameter name="response">${responseAliasEndPrepare}</camunda:inputParameter>
+          <camunda:inputParameter name="status">${status}</camunda:inputParameter>
+          <camunda:inputParameter name="type">${endPrepareType}</camunda:inputParameter>
+          <camunda:inputParameter name="responseAlias">${responseAliasEndPrepare}</camunda:inputParameter>
+        </camunda:inputOutput>
+        <camunda:in businessKey="#{execution.processBusinessKey}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_08y13lb</bpmn:incoming>
+      <bpmn:outgoing>Flow_167wno1</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="Flow_167wno1" sourceRef="Activity_1t0ypxx" targetRef="Activity_0lvavdj" />
+    <bpmn:callActivity id="Activity_1ambe5f" name="Публикация" camunda:asyncAfter="true" calledElement="eventPublication">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="requestId">${requestIdAliasStartPublication}</camunda:inputParameter>
+          <camunda:inputParameter name="response">${responseAliasStartPublication}</camunda:inputParameter>
+          <camunda:inputParameter name="status">${status}</camunda:inputParameter>
+          <camunda:inputParameter name="type">${startPublicationType}</camunda:inputParameter>
+          <camunda:inputParameter name="mapResponse">
+            <camunda:map>
+              <camunda:entry key="startPrepareType">${execution.getVariableTyped(responseAliasStartPrepare, true)}</camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+        <camunda:in businessKey="#{execution.processBusinessKey}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1hv9xev</bpmn:incoming>
+      <bpmn:outgoing>Flow_08y13lb</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="Flow_08y13lb" sourceRef="Activity_1ambe5f" targetRef="Activity_1t0ypxx" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1ii6jgs">
+      <bpmndi:BPMNShape id="Participant_0brltxu_di" bpmnElement="asd" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1320" height="260" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0x8e376_di" bpmnElement="Event_0x8e376">
+        <dc:Bounds x="262" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0tumf0u" bpmnElement="Activity_1axcpc0">
+        <dc:Bounds x="380" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0fpt6gz" bpmnElement="Activity_1ambe5f">
+        <dc:Bounds x="580" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_156b5io" bpmnElement="Activity_1t0ypxx">
+        <dc:Bounds x="770" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0ijc1jy" bpmnElement="Activity_0lvavdj">
+        <dc:Bounds x="960" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1r13ie0" bpmnElement="Activity_17t7skb">
+        <dc:Bounds x="1140" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vs54ao_di" bpmnElement="Event_1vs54ao">
+        <dc:Bounds x="1302" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0rb1edv_di" bpmnElement="Flow_0rb1edv">
+        <di:waypoint x="298" y="200" />
+        <di:waypoint x="380" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1hv9xev_di" bpmnElement="Flow_1hv9xev">
+        <di:waypoint x="480" y="200" />
+        <di:waypoint x="580" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08y13lb_di" bpmnElement="Flow_08y13lb">
+        <di:waypoint x="680" y="200" />
+        <di:waypoint x="770" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_167wno1_di" bpmnElement="Flow_167wno1">
+        <di:waypoint x="870" y="200" />
+        <di:waypoint x="960" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yvlhy8_di" bpmnElement="Flow_0yvlhy8">
+        <di:waypoint x="1060" y="200" />
+        <di:waypoint x="1140" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_193gsin_di" bpmnElement="Flow_193gsin">
+        <di:waypoint x="1240" y="200" />
+        <di:waypoint x="1302" y="200" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
